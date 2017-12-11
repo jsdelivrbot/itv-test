@@ -25,14 +25,13 @@ class SearchBar extends Component{
     e.preventDefault();
     //we need to go and fetch flickr data
     this.props.fetchCategory(this.state.selection);
-    this.setState({
-      selection: ''
-    });
-    // console.log('submit', this.state);
+    // this.setState({
+    //   selection: ''
+    // });
+    console.log('submit', this.state);
   }
 
   render(){
-    const {selection} = this.state;
     return(
       <form
         onSubmit={this.handleSubmit}
@@ -42,10 +41,11 @@ class SearchBar extends Component{
           <select
             className="form-control"
             id="per-page"
-            value={selection}
+            value={this.state.selection}
             onChange={this.handleChange}
             placeholder="select category"
           >
+            <option value="">Select category</option>
             <option>Children</option>
             <option>Comedy</option>
             <option>Drama & Soaps</option>
@@ -57,14 +57,14 @@ class SearchBar extends Component{
           </select>
         </div>
 
-        {/* <div className="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Search for images"
             className="form-control"
             onChange={this.handleChange}
           />
-        </div> */}
+        </div>
 
         <span className="input-group-btn">
           <button type="submit" className="btn-secondary btn">Search
