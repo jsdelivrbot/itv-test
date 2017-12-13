@@ -5,7 +5,7 @@ export default function (state = [], action){
     case FETCH_DATA:
       //create entirely new array and return it to state
       // return state.concat([action.payload.data]);
-      console.log(action);
+      // console.log(action);
       return [action.payload.data, ...state];
   }
   return state;

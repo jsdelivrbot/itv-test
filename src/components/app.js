@@ -20,7 +20,11 @@ export default class App extends Component {
   render() {
     return (
       <main>
-        <img src="../../ITV_logo_2013.svg.png" alt="itv icon" />
+        <header>
+          <img src="../../ITV_logo_2013.svg.png" alt="itv icon" />
+          <h1>Category Search App</h1>
+          <div></div>
+        </header>
         <SearchBar />
         <CategoryList/>
       </main>
